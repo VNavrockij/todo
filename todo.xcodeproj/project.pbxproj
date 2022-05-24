@@ -16,6 +16,7 @@
 		FA928E49283CCED300FF69D1 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA928E48283CCED300FF69D1 /* TodoCell.swift */; };
 		FA928E4B283CD73A00FF69D1 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA928E4A283CD73A00FF69D1 /* Todo.swift */; };
 		FA928E4D283CD7E100FF69D1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA928E4C283CD7E100FF69D1 /* APIError.swift */; };
+		FA928E50283CEF1600FF69D1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA928E4F283CEF1600FF69D1 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FA928E48283CCED300FF69D1 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		FA928E4A283CD73A00FF69D1 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		FA928E4C283CD7E100FF69D1 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		FA928E4F283CEF1600FF69D1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		FA928E30283CCA3300FF69D1 /* todo */ = {
 			isa = PBXGroup;
 			children = (
+				FA928E4E283CEEFB00FF69D1 /* Services */,
 				FA928E47283CCE9500FF69D1 /* Controller */,
 				FA928E46283CCE8C00FF69D1 /* View */,
 				FA928E45283CCE8000FF69D1 /* Model */,
@@ -98,6 +101,14 @@
 				FA928E35283CCA3300FF69D1 /* TodoVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA928E4E283CEEFB00FF69D1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA928E4F283CEF1600FF69D1 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 				FA928E49283CCED300FF69D1 /* TodoCell.swift in Sources */,
 				FA928E4B283CD73A00FF69D1 /* Todo.swift in Sources */,
 				FA928E4D283CD7E100FF69D1 /* APIError.swift in Sources */,
+				FA928E50283CEF1600FF69D1 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
