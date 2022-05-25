@@ -15,20 +15,19 @@ class NetworkService {
     
     let session = URLSession(configuration: .default)
     
-    func getTodos(onSuccess: @escaping (Todos) -> Void) {
+    func getTodos(onSuccess: @escaping (Todos) -> Void, onError: @escaping (String) -> Void) {
         let url = URL(string: "\(URL_BASE)")!
         
         let task = session.dataTask(with: url) { data, response, error in
             
             DispatchQueue.main.async {
                 if let error = error {
-                    debugPrint(error.localizedDescription)
-                    
+                    onError(error.localizedDescription)
                     return
                 }
                 
                 guard let data = data, let response = response as? HTTPURLResponse else {
-                    debugPrint("Invalid data or response")
+                    onError("Invalid data or response")
                     return
                 }
                 
@@ -39,10 +38,10 @@ class NetworkService {
                         //handle success
                     } else {
                         let err = try JSONDecoder().decode(APIError.self, from: data)
-                        // handle error
+                        onError(err.message)
                     }
                 } catch {
-                    debugPrint(error.localizedDescription)
+                    onError(error.localizedDescription)
                 }
             }
         }

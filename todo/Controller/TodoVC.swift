@@ -30,7 +30,10 @@ class TodoVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             self.todos = todos.items
             self.todoTable.reloadData()
             debugPrint(todos)
+        } onError: { (errorMessage) in
+            debugPrint(errorMessage)
         }
+
     }
 
     @IBAction func addTodo(_ sender: Any) {
