@@ -23,12 +23,7 @@ class TodoVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         getTodos()
         
-        NetworkService.shared.addTodo(todo: Todo(item: "TEST", priority: 2)) { (todos) in
-            self.todos = todos.items
-            self.todoTable.reloadData()
-        } onError: { (errorMessage) in
-            
-        }
+
 
 
     }
@@ -45,7 +40,19 @@ class TodoVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     @IBAction func addTodo(_ sender: Any) {
-    
+        guard let todoItem = todoItemTxt.text else  {
+            // show err "you must enter a todo item"
+            return
+        }
+        
+        let todo = Todo(item: todoItem, priority: prioritySegment.selectedSegmentIndex)
+        NetworkService.shared.addTodo(todo: todo) { (todos) in
+            self.todoItemTxt.text = ""
+            self.todos = todos.items
+            self.todoTable.reloadData()
+        } onError: { (errorMessage) in
+            // show any arrors to user on POST
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
