@@ -108,6 +108,7 @@
                     <connections>
                         <outlet property="prioritySegment" destination="F1Y-yF-0Va" id="TzQ-bd-mJA"/>
                         <outlet property="todoItemTxt" destination="hAQ-xI-z0B" id="9yp-57-VpS"/>
+                        <outlet property="todoTable" destination="8Zc-aF-hzA" id="Xiy-9S-Nx4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
